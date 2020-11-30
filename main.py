@@ -75,7 +75,7 @@ weapons_of_mass_destruction = [rock, paper, scissors, lizard, spoke]
 # Random generated weapon for bot
 random_weapon = random.randint(1, len(weapons_of_mass_destruction))
 
-
+# Main game logic
 def play_game():
     global random_weapon
     global user_input
@@ -89,7 +89,7 @@ def play_game():
                   "(5)- Spoke")
     print(start_game_menu)
 
-    # Random generated weapon for bot
+    # Random generated weapon for bot recalled again if player wanted to play again,
     random_weapon = random.randint(1, len(weapons_of_mass_destruction))
 
     while True:
@@ -97,6 +97,7 @@ def play_game():
         user_input = input("> ")
         user_input_int = int(user_input)
 
+        # Display what the user and the bot has chosen
         if user_input_int == 1:
             print("You played:")
             print(rock)
@@ -156,7 +157,7 @@ def bot_choice():
     bot_turn = weapons_of_mass_destruction[random_weapon - 1]
     print(bot_turn)
 
-
+# Allows the user to play again if they want to
 def play_again():
     print("\nWould you like to play again? 'Y' or 'N'")
 
